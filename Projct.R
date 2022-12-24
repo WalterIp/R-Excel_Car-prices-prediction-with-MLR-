@@ -14,7 +14,7 @@ str(car.df)
 names(car.df)
 
 
-###Step 1: Choose the predictors
+###Step 1: Choose the predictors (avoid multicollinearity)
 
 #First step: correlation coefficient
 install.packages("corrplot")
@@ -25,7 +25,7 @@ N <- cor(car.df[1:10], car.df[1:10])
 
 corrplot(M, method="color")
 
-#Second step: ggplot to verifity
+#Second step: ggplot to verify
 library(ggplot2)
 ggplot(data = car.df) + geom_point(aes(x = enginesize, y = price..Y.)) + 
   xlab("Engine Size") +
